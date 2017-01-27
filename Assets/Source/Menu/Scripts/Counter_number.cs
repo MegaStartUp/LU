@@ -4,6 +4,7 @@ using System.Collections;
 public class Counter_number : MonoBehaviour {
 
     public int score=0;
+    public int max_lattre_indicator;
 
     int unit;
     int dozens;
@@ -684,10 +685,14 @@ public class Counter_number : MonoBehaviour {
 
 
 
-
+    void max_latter_corse() {
+        if (max_lattre_indicator==1) {score = PlayerPrefs.GetInt("Top score"); }
+        if (max_lattre_indicator == 2) { score = PlayerPrefs.GetInt("Last score"); }
+    }
 
     void Start()
     {
+        max_latter_corse();
         counterscore();
     }
 }
